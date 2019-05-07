@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>credit card</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <section class="card-face">
+        <div class="img-type-bank">
+            <img src="" alt="">
+        </div>
+        <div class="wrapper-number-card">
+            <input type="text" id="numberCard" class="form form-big" placeholder="CARD NUMBER">
+        </div>
+        <div class="description-valid-thru">
+            <span>VALID <br> THRU</span>
+            <span>&rtrif;</span>
+        </div>
+        <div class="wrapper-valid-thru">
+            <input type="text" id="validThru" class="form form-small" placeholder="MO/Y" data-valid-example="12/29">
+        </div>
+        <div class="wrapper-cvv-card">
+            <input type="text" class="form form-small" id="cvvCard" placeholder="CVV">
+        </div>
+        <div class="wrapper-user-name">
+            <input type="text" id="userName" class="form" placeholder="USER NAME">
+        </div>
+        <div class="img-payment-system">
+            <img src="" alt="">
+        </div>
+    </section>
+    <section class="info-block">
+        <button id="generaterCard">Generater card</button>
+        <h2>Information block</h2>
+        <ol>
+            <li>Input mask for all text fields.</li>
+            <li>Input check.</li>
+            <li>Defines 3 payment systems:<ul>
+                <li>Mastercard</li>
+                <li>Visa</li>
+                <li>Maestro</li>
+            </ul></li>
+            <li>Defines 4 Russian banks:<ul>
+                    <li>Sberbank</li>
+                    <li>Alfa bank</li>
+                    <li>Tinkoff bank</li>
+                    <li>Vtb bank</li>
+                </ul></li>
+            <li>Design card changes depending on the bank.</li>
+            <li>Adaptive layout.</li>
+        </ol>
+    </section>
+</body>
+</html>
