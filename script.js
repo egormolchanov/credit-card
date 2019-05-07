@@ -2,15 +2,18 @@ const getInfoCard = {
     'mask-payment-system' : [
         {
             regex: '^(5[1-5]|(?:222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720))',
-            cardtype: 'mastercard'
+            cardtype: 'mastercard',
+            img: 'image/mastercard.png'
         },
         {
             regex: '^4',
-            cardtype: 'visa'
+            cardtype: 'visa',
+            img: 'image/visa.png'
         },
         {
             regex: '^(50|5[6-9]|6)',
-            cardtype: 'maestro'
+            cardtype: 'maestro',
+            img: 'image/maestro.png'
         }
     ],
 
@@ -18,22 +21,26 @@ const getInfoCard = {
         {
             regex: '^(4279 22|4279 30|4279 02|4279 01|4279 59|4279 99|4279 16|4279 77|4279 48|4279 20|4279 66|4279 25|4279 75|4279 35|5313 10|5450 37|5158 42|5275 76|5439 42|6761 95|6761 96|6762 80|4274|4276|5437 63|5469|5479|5484)',
             cardtype: 'sberbank',
-            color: 'rgb(125,194,68)'
+            color: 'rgb(125,194,68)',
+            img: 'image/sberbank.png'
         },
         {
             regex: '^(4154 00|4341 35|4289 06|4277 14|4154 29|4790 04|4154 82|4289 05|4195 39|4154 81|4317 27|4652 27|4582 79|4779 60|4390 77|4105 84|4582 80|4790 87|4779 32|4787 52|4779 64|4584 50|4314 17|4288 04|4314 16|4195 40|4402 37|4390 00|4154 28|4584 10|4584 11|5486 74|5486 73|5521 75|5211 78)',
             cardtype: 'alfabank',
-            color: 'rgb(230, 96, 87)'
+            color: 'rgb(230, 96, 87)',
+            img: 'image/alfabank.png'
         },
         {
             regex: '^(5189 01|5213 24|5483 87)',
             cardtype: 'tinkoffbank',
-            color: 'rgb(255,220,44)'
+            color: 'rgb(255,220,44)',
+            img: 'image/tinkoffbank.png'
         },
         {
             regex: '^(4067 44|4188 31|4272 29|4272 30|4188 68|4188 69|4188 70|4188 73|4211 91|4263 75|4301 27|4317 23|4406 22|4406 23|4475 20|4874 95|4908 09|5102 29|5102 30|5120 19|5123 42|5126 40|5127 04|5127 36|5127 58|5128 12|5157 75|5157 86|5159 04|5160 77|5160 80|5160 84|5178 06|5183 36|5193 37|5200 62|5213 42|5239 42|5240 68|5248 95|5257 73|5268 66|5268 68|5268 73|5286 28|5101 44|5185 91|5186 40|5193 04|5199 98|5278 83|5290 25|5299 38|5452 24|5495 00|5543 86|5543 93|5585 18|6768 51|6768 60|6768 61|6768 88|6768 93|5149 08|5342 45|5342 60|5411 59|5472 09|5472 14|5477 79|5482 18|5482 26|5488 42|5498 91|5579 66|5104 10|5123 03|5176 47|5183 63|5257 87|6768 00|6768 02|6768 03|6768 05|6768 45|6768 96|6764 21)',
             cardtype: 'vtbbank',
-            color: 'rgb(0,159,223)'
+            color: 'rgb(0,159,223)',
+            img: 'image/vtbbank.png'
         }
     ],
 
@@ -88,8 +95,7 @@ const maskNumberCard = () => {
         let regexPaymentSystem = new RegExp(getInfoCard['mask-payment-system'][key].regex)
     
         if (regexPaymentSystem.test(maskCard)) {
-            let paymentSystem = getInfoCard['mask-payment-system'][key].cardtype;
-            imgPaymentSystem.src = `image/${paymentSystem}.png`;
+            imgPaymentSystem.src = getInfoCard['mask-payment-system'][key].img;
             foundPaymentSystem = true;
         }
     }
@@ -103,9 +109,8 @@ const maskNumberCard = () => {
         let regexTypeBank = new RegExp(getInfoCard['mask-type-bank'][key].regex)
 
         if (regexTypeBank.test(maskCard)) {
-            let typeBank = getInfoCard['mask-type-bank'][key].cardtype,
-                colorCard = getInfoCard['mask-type-bank'][key].color;
-            imgTypeBank.src = `image/${typeBank}.png`;
+            let colorCard = getInfoCard['mask-type-bank'][key].color;
+            imgTypeBank.src = getInfoCard['mask-type-bank'][key].img;
             foundTypeBank = true;
             cardFace.style.background = colorCard;
         }
