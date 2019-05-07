@@ -101,7 +101,7 @@ const maskNumberCard = () => {
     }
 
     //if the payment system was not found
-    if (!foundPaymentSystem) imgPaymentSystem.src = '';
+    if (!foundPaymentSystem) imgPaymentSystem.src = 'image/emptiness.png';
 
 
     //bank search
@@ -118,7 +118,7 @@ const maskNumberCard = () => {
 
     //if the bank was not found
     if (!foundTypeBank) {
-        imgTypeBank.src = '';
+        imgTypeBank.src = 'image/emptiness.png';
         cardFace.style.background = '#24335f';
     }
 }
