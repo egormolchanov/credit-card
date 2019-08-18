@@ -13,3 +13,5 @@
                             Vtb bank
 5) Design card changes depending on the bank.
 6) Adaptive layout.
+
+https://egormolchanov.github.io/credit-card/
